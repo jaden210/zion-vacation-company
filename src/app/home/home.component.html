@@ -1,0 +1,42 @@
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="search-container">
+    <h1>Find your next stay</h1>
+    <div class="search-bar">
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Where are you going?">
+      <button class="search-button" (click)="onSearch()">Search</button>
+    </div>
+  </div>
+</div>
+
+<!-- Popular Destinations -->
+<section class="destinations">
+  <h2>Popular destinations</h2>
+  <div class="destination-grid">
+    <div class="destination-card" *ngFor="let destination of destinations">
+      <img [src]="destination.imageUrl" [alt]="destination.name">
+      <h3>{{ destination.name }}</h3>
+      <p>Average ${{ destination.price }}/night</p>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Categories -->
+<section class="categories">
+  <h2>Discover experiences</h2>
+  <div class="category-grid">
+    <div class="category-card" *ngFor="let category of categories">
+      <img [src]="category.imageUrl" [alt]="category.name">
+      <h3>{{ category.name }}</h3>
+    </div>
+  </div>
+</section>
+
+<!-- Host Section -->
+<section class="become-host">
+  <div class="host-content">
+    <h2>Become a Host</h2>
+    <p>Earn extra income and unlock new opportunities by sharing your space.</p>
+    <button class="host-button">Learn more</button>
+  </div>
+</section>

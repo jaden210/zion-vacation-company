@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "zionVacationCompany": {
+    "zion-vacation-company": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -54,6 +54,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -91,10 +92,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "zionVacationCompany:build:production"
+              "buildTarget": "zion-vacation-company:build:production"
             },
             "development": {
-              "buildTarget": "zionVacationCompany:build:development"
+              "buildTarget": "zion-vacation-company:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -118,6 +119,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -125,5 +127,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

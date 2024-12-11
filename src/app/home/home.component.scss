@@ -1,0 +1,209 @@
+// Variables
+$primary-color: #ff385c;
+$text-dark: #333;
+$text-light: #666;
+$white: #fff;
+$border-radius: 1rem;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin background-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin hover-transform {
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// Hero Section
+.hero-section {
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/hero.jpg');
+  @include background-cover;
+  @include flex-center;
+  color: $white;
+
+  .search-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: rgba($white, 0.9);
+    border-radius: $border-radius;
+    color: $text-dark;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-bar {
+      display: flex;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+
+      input {
+        flex: 1;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .search-button {
+        padding: 1rem 2rem;
+        background-color: $primary-color;
+        color: $white;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Destinations Section
+.destinations {
+  padding: 4rem 2rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+
+    .destination-card {
+      border-radius: $border-radius;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      @include hover-transform;
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      h3 {
+        padding: 1rem;
+        margin: 0;
+      }
+
+      p {
+        padding: 0 1rem 1rem;
+        color: $text-light;
+      }
+    }
+  }
+}
+
+// Categories Section
+.categories {
+  padding: 4rem 2rem;
+  background-color: #f7f7f7;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+
+    .category-card {
+      position: relative;
+      border-radius: $border-radius;
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      h3 {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        color: $white;
+        margin: 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+// Become Host Section
+.become-host {
+  padding: 4rem 2rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/host.jpg');
+  @include background-cover;
+  color: $white;
+  text-align: center;
+
+  .host-content {
+    max-width: 600px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .host-button {
+      padding: 1rem 2rem;
+      background-color: $white;
+      color: $text-dark;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: darken($white, 3%);
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+
+    .search-container {
+      width: 90%;
+
+      .search-bar {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .destination-grid,
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}

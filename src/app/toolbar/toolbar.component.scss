@@ -1,0 +1,92 @@
+.toolbar {
+  &-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: white;
+    
+    .logo {
+      color: #FF385C;
+      font-weight: 700;
+      font-size: 1.5rem;
+      
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    
+    .search-container {
+      .search-bar {
+        border: 1px solid #DDDDDD;
+        border-radius: 40px;
+        transition: box-shadow 0.2s ease;
+        
+        &:hover {
+          box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        
+        button {
+          font-size: 0.875rem;
+          
+          &:not(.search-button) {
+            &:hover {
+              background-color: #F7F7F7;
+              border-radius: 40px;
+            }
+          }
+        }
+        
+        .divider {
+          width: 1px;
+          background-color: #DDDDDD;
+        }
+        
+        .search-button {
+          background-color: #FF385C;
+          padding: 0.5rem;
+          border-radius: 50%;
+          
+          &:hover {
+            background-color: darken(#FF385C, 5%);
+          }
+          
+          svg {
+            color: white;
+          }
+        }
+      }
+    }
+    
+    .right-nav {
+      .host-button {
+        font-size: 0.875rem;
+        transition: background-color 0.2s ease;
+        
+        &:hover {
+          background-color: #F7F7F7;
+        }
+      }
+      
+      .globe-button {
+        &:hover {
+          background-color: #F7F7F7;
+        }
+      }
+      
+      .profile-menu {
+        border: 1px solid #DDDDDD;
+        transition: box-shadow 0.2s ease;
+        
+        &:hover {
+          box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        
+        svg {
+          color: #717171;
+        }
+      }
+    }
+  }
+}
